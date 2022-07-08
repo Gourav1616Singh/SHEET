@@ -17,3 +17,27 @@ public:
         
     }
 };
+
+
+
+//2 Approach
+
+
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+      int i,bestsell=0,pr=0;
+        int maxp=0;
+        for(i=prices.size()-1;i>=0;i--)
+        {
+            if(prices[i]>bestsell)
+            {
+                bestsell=prices[i];
+            }
+            pr=bestsell-prices[i];
+            maxp=max(maxp,pr);
+            
+        }
+        return maxp;
+    }
+};
