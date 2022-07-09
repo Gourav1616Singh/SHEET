@@ -1,0 +1,16 @@
+vector<int> Solution::repeatedNumber(const vector<int> &A) {
+ long long int n=A.size();
+long long int arraysum=0,sum=n*(n+1)/2,sqsum=n*(n+1)*(2*n+1)/6,arraysqsum=0;
+for(int i=0;i<n;i++)
+{
+    arraysum+=(long long int)A[i];
+    arraysqsum+=(long long int)A[i]*(long long int)A[i];
+}
+long long int minus=(sum-arraysum);
+long long int plus=(sqsum-arraysqsum)/minus;
+vector<int>ans;
+ans.push_back((plus-minus)/2);
+ans.push_back((plus+minus)/2);
+return ans;
+}
+
