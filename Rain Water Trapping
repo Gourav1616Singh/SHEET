@@ -1,0 +1,40 @@
+class Solution {
+public:
+    long long  trap(vector<int>& height) {
+        int n=height.size();
+        int lbar=height[0],rbar=height[n-1],left=0,right=n-1;
+        long long ans=0;
+        while(left<=right)
+        {
+            if(lbar<rbar)
+            {
+                if(height[left]<lbar)
+                {
+                    ans+=lbar-height[left];
+                    left++;
+                }
+                
+            
+                else{
+                lbar=height[left];
+                    left++;
+                     }
+            }
+            else
+            {
+                if(height[right]<rbar)
+                {
+                    ans+=rbar-height[right];
+                    right--;
+                }
+                else{
+                    rbar=height[right];
+                    right--;
+                }
+            }
+        }
+        return ans;
+        
+        
+    }
+};
