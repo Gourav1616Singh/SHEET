@@ -1,0 +1,53 @@
+class Solution {
+public:
+    bool isPalindrome(string s) {
+        string newstr="";
+        for(int i=0;i<s.length();i++)
+        {
+            if(isalnum(s[i]))
+            newstr+=tolower(s[i]);
+        }
+        
+       int si=0,e=newstr.size()-1;
+        while(si<e)
+        {
+            if(newstr[e]!=newstr[si])
+                return false;
+            
+                else{
+                si++;
+                e--;
+                }
+        }
+        return true;
+        
+    }
+};
+
+
+
+
+
+
+//2 approach
+
+
+class Solution {
+public:
+    bool isPalindrome(string s) {
+        string newstr="";
+        for(int i=0;i<s.length();i++)
+        {
+            if(isalnum(s[i]))
+            newstr+=tolower(s[i]);
+        }
+        
+     string tem=newstr;
+        reverse(tem.begin(),tem.end());
+        if(tem!=newstr)
+            return false;
+         return true;
+    }
+
+   
+};
