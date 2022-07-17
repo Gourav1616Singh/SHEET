@@ -1,0 +1,27 @@
+int palindrome(vector<int> A)
+{
+    int n=A.size();
+	long long int i=0,j=n-1,c=0;
+   while(i<j)
+   {
+       if(A[i]==A[j])
+       {
+           i++;
+           j--;
+       }
+       else if(A[i]>A[j])
+       {
+           c++;   
+           j--;
+           A[j]=A[j]+A[j+1];
+             
+       }
+       else
+       {
+           i++;
+       A[i]=A[i]+A[i-1];
+       c++;
+       }
+   }
+    return c;
+}
