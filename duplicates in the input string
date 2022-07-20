@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+void printDups(string str)
+{
+  int i,n=str.size();
+  map<char,int>mp;
+  
+  for(i=0;i<n;i++)
+  {
+    mp[str[i]]++;
+  }
+  for(auto it: mp)
+  {
+    if(it.second >1)
+      cout<<it.first <<"="<<it.second<<endl;
+  }
+}
+/* Driver code*/
+int main()
+{
+	string str;
+ getline(cin,str);
+	printDups(str);
+	return 0;
+}
