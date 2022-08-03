@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int thirdMax(vector<int>& nums) {
+        priority_queue<int>q;
+        int i;
+       unordered_set<int> st(nums.begin(),nums.end());
+        for (auto itr : st)
+        {
+            q.push(itr);
+        }
+        if(q.size()>=3){
+        for(int i=1;i<3;i++)
+            q.pop();
+        return q.top();
+        }
+        else
+            return q.top();
+                
+        
+        
+    }
+};
