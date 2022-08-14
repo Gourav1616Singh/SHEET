@@ -1,0 +1,28 @@
+class Solution {
+public:
+    vector<vector<int>> subsets(vector<int>& nums) {
+        vector<vector<int>>ans;
+        vector<int>tmp;
+        int i=0;
+        rec(ans,nums,tmp,i);
+        return ans;
+        
+        
+    }
+        
+      void rec(vector<vector<int>>&ans,vector<int>&nums,vector<int>tmp,int i)
+        {
+        if(i==nums.size())
+            return ans.push_back(tmp);
+        
+        tmp.push_back(nums[i]);
+        rec(ans,nums,tmp,i+1);
+        tmp.pop_back();
+        rec(ans,nums,tmp,i+1);
+        }
+        
+        
+        
+        
+    
+};
