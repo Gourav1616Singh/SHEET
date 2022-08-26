@@ -41,7 +41,7 @@ public:
     }
     reverse(ans.begin(), ans.end());
     
-   return ans.size();
+   return ans;
 
     }
     
