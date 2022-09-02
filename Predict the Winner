@@ -1,0 +1,26 @@
+class Solution {
+public:
+    int check(vector<int>&nums,int i,int j)
+    {
+        if(i>j)
+            return 0 ;
+        
+        int c1=nums[i]+min(check(nums,i+2,j),check(nums,i+1,j-1));
+        int c2=nums[j]+min(check(nums,i+1,j-1),check(nums,i,j-2));
+        
+        return max(c1,c2);
+    }
+    
+    bool PredictTheWinner(vector<int>& nums) {
+        int sum=0,n=nums.size();
+        for(int i=0;i<nums.size();i++)
+            sum+=nums[i];
+        
+       int bs= check(nums,0,n-1);
+        if(bs>=sum-bs)
+            return true;
+        else
+            return false;
+        
+    }
+};
